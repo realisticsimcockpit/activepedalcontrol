@@ -1,0 +1,12 @@
+.upstream/
+
+# Local/editor noise
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+desktop.ini
+
+# Runtime logs
+*.log

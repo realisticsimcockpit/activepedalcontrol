@@ -1,0 +1,34 @@
+{
+    "Category":  "Controls",
+    "Title":  "Active Pedal Control Basic V1.0",
+    "Description":  "Basic V1.0 touch control surface for active pedals through SimHub plugin data",
+    "Author":  "Realistic Simcockpit",
+    "ScreenCount":  4,
+    "InGameScreensIndexs":  [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+    "IdleScreensIndexs":  [
+                              0,
+                              1,
+                              2,
+                              3
+                          ],
+    "MainPreviewIndex":  0,
+    "IsOverlay":  false,
+    "ShowInTaskBar":  true,
+    "Width":  1920,
+    "Height":  1080,
+    "OverlaySizeWarning":  false,
+    "MetadataVersion":  2,
+    "EnableOnDashboardMessaging":  true,
+    "PitScreensIndexs":  [
+                             0,
+                             1,
+                             2,
+                             3
+                         ],
+    "DashboardVersion":  "Basic V1.0"
+}
