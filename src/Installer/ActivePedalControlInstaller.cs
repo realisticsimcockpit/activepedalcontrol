@@ -4,12 +4,19 @@ using System.IO;
 using System.Reflection;
 using System.Security.Principal;
 
+[assembly: AssemblyTitle("Active Pedal Control Setup")]
+[assembly: AssemblyProduct("Active Pedal Control")]
+[assembly: AssemblyCompany("Realistic Simcockpit")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
+
 namespace ActivePedalControlInstaller
 {
     internal static class Program
     {
         private const string DefaultSimHubPath = @"C:\Program Files (x86)\SimHub";
         private const string BasicDashboardName = "Active Pedal Control Basic V1.0";
+        private const string Gt1DashboardName = "Active Pedal Control GT1 V1.0";
 
         [STAThread]
         private static int Main(string[] args)
@@ -72,9 +79,11 @@ namespace ActivePedalControlInstaller
                 {
                     string pluginPath = Path.Combine(tempPath, "ActivePedalBridge.dll");
                     string basicZipPath = Path.Combine(tempPath, "Basic.zip");
+                    string gt1ZipPath = Path.Combine(tempPath, "GT1.zip");
 
                     WriteResource("ActivePedalBridge.dll", pluginPath);
                     WriteResource("BasicDashboard.zip", basicZipPath);
+                    WriteResource("GT1Dashboard.zip", gt1ZipPath);
 
                     if (installPlugin)
                     {
@@ -84,6 +93,7 @@ namespace ActivePedalControlInstaller
                     }
 
                     InstallDashboard(basicZipPath, dashTemplatesPath, BasicDashboardName);
+                    InstallDashboard(gt1ZipPath, dashTemplatesPath, Gt1DashboardName);
                 }
                 finally
                 {
@@ -91,7 +101,7 @@ namespace ActivePedalControlInstaller
                 }
 
                 Console.WriteLine("Installation completed.");
-                Console.WriteLine("Restart SimHub and open Active Pedal Control Basic V1.0.");
+                Console.WriteLine("Restart SimHub and open either Active Pedal Control dashboard style.");
                 return 0;
             }
             catch (Exception ex)
