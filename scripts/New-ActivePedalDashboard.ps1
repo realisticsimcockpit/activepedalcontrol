@@ -462,7 +462,8 @@ function Add-PedalCard(
     [void]$items.Add((RectangleItem "$pedal-accent" $left $top $w 8 $accent $null))
     $titleColor = if ($script:isGt1) { $accent } else { $script:colors.White }
     [void]$items.Add((TextItem "$pedal-title" $title $innerLeft ($top + 28) 320 64 38 $titleColor "#00FFFFFF" "Bold" 0 1))
-    [void]$items.Add((EllipseItem "$pedal-ready-dot" ($left + 1598) ($top + 52) 26 "#FF45D483" (Bind-Visible "[ActivePedalBridge.$pedal.ConnectionReady]")))
+    $readyColor = if ($script:isGt1) { $script:colors.Status } else { "#FF45D483" }
+    [void]$items.Add((EllipseItem "$pedal-ready-dot" ($left + 1598) ($top + 52) 26 $readyColor (Bind-Visible "[ActivePedalBridge.$pedal.ConnectionReady]")))
     [void]$items.Add((EllipseItem "$pedal-off-dot" ($left + 1598) ($top + 52) 26 "#FFFF4D5E" (Bind-Visible "1-[ActivePedalBridge.$pedal.ConnectionReady]")))
     if (!$script:isGt1) {
         [void]$items.Add((TextItem "$pedal-status" "--" ($left + 1644) ($top + 34) 150 60 26 $script:colors.White "#00FFFFFF" "Bold" 0 1 (Bind-Text "[ActivePedalBridge.$pedal.ConnectionStatus]")))

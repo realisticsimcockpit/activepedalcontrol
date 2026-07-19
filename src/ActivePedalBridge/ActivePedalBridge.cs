@@ -10,6 +10,12 @@ using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Media;
 
+[assembly: AssemblyTitle("ActivePedalBridge")]
+[assembly: AssemblyProduct("Active Pedal Control")]
+[assembly: AssemblyCompany("Realistic Simcockpit")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
+
 namespace ActivePedalDashboard
 {
     [PluginDescription("Dashboard bridge for DiyFfbPedal. Reads live plugin state and forwards dashboard actions to the plugin.")]
