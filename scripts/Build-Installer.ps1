@@ -12,8 +12,9 @@ $out = Join-Path $outDir "ActivePedalControlSetup.exe"
 
 $plugin = Join-Path $outDir "ActivePedalBridge.dll"
 $basicZip = Join-Path $outDir "Active Pedal Control Basic V1.0.zip"
+$gt1Zip = Join-Path $outDir "Active Pedal Control GT1 V1.0.zip"
 
-foreach ($required in @($src, $manifest, $plugin, $basicZip)) {
+foreach ($required in @($src, $manifest, $plugin, $basicZip, $gt1Zip)) {
     if (!(Test-Path -LiteralPath $required)) {
         throw "Required file missing: $required"
     }
@@ -27,6 +28,7 @@ if (!(Test-Path -LiteralPath $csc)) {
 & $csc /nologo /target:exe /platform:anycpu /optimize+ /warn:4 /win32manifest:$manifest /out:$out `
     /resource:"$plugin,ActivePedalBridge.dll" `
     /resource:"$basicZip,BasicDashboard.zip" `
+    /resource:"$gt1Zip,GT1Dashboard.zip" `
     $src
 
 if ($LASTEXITCODE -ne 0) {

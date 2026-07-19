@@ -2,9 +2,10 @@
 
 SimHub 1920x1080 touch dashboard for DIY FFB active pedals.
 
-The project ships one dashboard, `Active Pedal Control Basic V1.0`, and a
-companion SimHub plugin named `ActivePedalBridge`. The dashboard never bypasses
-the pedal plugin: all reads and all actions go through the loaded
+The project ships two dashboard styles, `Active Pedal Control Basic V1.0` and
+`Active Pedal Control GT1 V1.0`, plus a companion SimHub plugin named
+`ActivePedalBridge`. The dashboards never bypass the pedal plugin: all reads
+and all actions go through the loaded
 `DiyFfbPedal.dll` or `DiyActivePedal.dll` plugin instance.
 
 ## Download
@@ -15,15 +16,22 @@ page.
 
 The release assets are:
 
-- `ActivePedalControlSetup.exe`: one-click installer for the dashboard and the
-  bridge plugin.
-- `Active Pedal Control Basic V1.0.zip`: dashboard package for manual SimHub
+- `ActivePedalControlSetup.exe`: one-click installer for both dashboards and
+  the bridge plugin.
+- `Active.Pedal.Control.Basic.V1.0.zip`: Basic dashboard package for manual
+  SimHub import.
+- `Active.Pedal.Control.GT1.V1.0.zip`: GT1 dashboard package for manual SimHub
   import.
 - `ActivePedalBridge.dll`: companion SimHub plugin for manual installation.
 
 ## Dashboard
 
-`Active Pedal Control Basic V1.0` is a clean utility-focused dashboard.
+Both dashboard styles provide the same controls, plug-in bindings and touch
+targets.
+
+- `Basic V1.0`: clean, utility-focused presentation.
+- `GT1 V1.0`: high-contrast motorsport presentation with technical borders,
+  condensed typography and a segmented input gauge.
 
 - `Configs` page with 3 columns: `Clutch`, `Brake`, `Throttle`.
 - Individual pedal pages: `Brake`, `Throttle`, `Clutch`.
@@ -31,6 +39,7 @@ The release assets are:
 - Pedal pages are shifted slightly downward to improve top-edge click accuracy
   on small VoCore screens.
 - Vertical input gauge on each pedal page.
+- `ACTIVE PEDAL CONTROL by REALISTIC SIMCOCKPIT` signature on every page.
 
 ## Quick Install
 
@@ -39,7 +48,8 @@ The release assets are:
 3. Run the installer as administrator.
 4. Start SimHub.
 5. Enable `ActivePedalBridge` if SimHub asks for plugin activation.
-6. Open `Active Pedal Control Basic V1.0`.
+6. Open either `Active Pedal Control Basic V1.0` or
+   `Active Pedal Control GT1 V1.0`.
 
 The installer uses this default SimHub path:
 
@@ -71,7 +81,7 @@ lock `ActivePedalBridge.dll`.
 C:\Program Files (x86)\SimHub
 ```
 
-3. Extract the dashboard zip into:
+3. Extract one or both dashboard ZIP files into:
 
 ```text
 C:\Program Files (x86)\SimHub\DashTemplates
@@ -81,6 +91,7 @@ Expected dashboard folder:
 
 ```text
 C:\Program Files (x86)\SimHub\DashTemplates\Active Pedal Control Basic V1.0
+C:\Program Files (x86)\SimHub\DashTemplates\Active Pedal Control GT1 V1.0
 ```
 
 4. Restart SimHub.
@@ -138,10 +149,11 @@ Build the bridge plugin:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Build-ActivePedalBridge.ps1
 ```
 
-Generate the dashboard:
+Generate both dashboard styles:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-ActivePedalDashboard.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-ActivePedalDashboard.ps1 -Theme Basic
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-ActivePedalDashboard.ps1 -Theme GT1
 ```
 
 Build the installer:
@@ -156,6 +168,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Build-Installer.ps
 - `dist/ActivePedalControlSetup.exe`
 - `dist/Active Pedal Control Basic V1.0`
 - `dist/Active Pedal Control Basic V1.0.zip`
+- `dist/Active Pedal Control GT1 V1.0`
+- `dist/Active Pedal Control GT1 V1.0.zip`
 
 ## Exposed Properties
 
