@@ -38,9 +38,11 @@ ActivePedalControlSetup.exe
 Manual installation:
 
 1. Copy `ActivePedalBridge.dll` to `C:\Program Files (x86)\SimHub`.
-2. Extract either or both dashboard ZIP files into
-   `C:\Program Files (x86)\SimHub\DashTemplates`.
-3. Restart SimHub.
+2. Create a named dashboard folder under
+   `C:\Program Files (x86)\SimHub\DashTemplates` for each style being installed.
+3. Extract each ZIP's contents into its matching named folder. The ZIP files do
+   not include the outer dashboard folder.
+4. Restart SimHub.
 
 The two dashboard names shown in SimHub are:
 

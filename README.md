@@ -81,20 +81,18 @@ lock `ActivePedalBridge.dll`.
 C:\Program Files (x86)\SimHub
 ```
 
-3. Extract one or both dashboard ZIP files into:
-
-```text
-C:\Program Files (x86)\SimHub\DashTemplates
-```
-
-Expected dashboard folder:
+3. Create the folder for each dashboard style you want to install:
 
 ```text
 C:\Program Files (x86)\SimHub\DashTemplates\Active Pedal Control Basic V1.0
 C:\Program Files (x86)\SimHub\DashTemplates\Active Pedal Control GT1 V1.0
 ```
 
-4. Restart SimHub.
+4. Extract the contents of each dashboard ZIP into its matching folder. The ZIP
+   files contain the dashboard files directly and do not include the outer
+   dashboard folder.
+
+5. Restart SimHub.
 
 ## How It Works
 
